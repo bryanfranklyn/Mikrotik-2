@@ -1,0 +1,223 @@
+/ip firewall address-list add list=sosmed address=31.13.24.0/21 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.64.0/18 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.64.0/19 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.64.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.65.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.66.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.67.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.70.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.71.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.72.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.73.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.74.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.76.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.77.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.79.0/24 comment="	facebook"
+/ip firewall address-list add list=sosmed address=31.13.80.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.81.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.82.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.83.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.84.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.85.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.86.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.87.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.89.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.92.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.93.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.94.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.95.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=31.13.96.0/19 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=45.64.40.0/22 comment="	Facebook Singapore Pte Ltd."
+/ip firewall address-list add list=sosmed address=66.220.144.0/20 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=66.220.144.0/21 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=66.220.152.0/21 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.63.176.0/20 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.63.176.0/21 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.63.184.0/21 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.171.224.0/19 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.171.224.0/20 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.171.239.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.171.240.0/20 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.171.250.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=69.171.255.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=74.119.76.0/22 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=102.132.96.0/20 comment="	Facebook South Africa (Pty) Ltd"
+/ip firewall address-list add list=sosmed address=102.132.96.0/24 comment="	MBA1.01"
+/ip firewall address-list add list=sosmed address=103.4.96.0/22 comment="	1 Temasek Avenue"
+/ip firewall address-list add list=sosmed address=129.134.0.0/17 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=129.134.25.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=129.134.26.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=129.134.27.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=129.134.28.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=129.134.29.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=129.134.30.0/23 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=129.134.30.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=129.134.31.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.0.0/17 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.1.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.2.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.3.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.6.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.7.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.8.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.9.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.10.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.11.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.12.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.13.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.14.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.15.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.16.0/24 comment="	facebook"
+/ip firewall address-list add list=sosmed address=157.240.17.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.18.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.19.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.20.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.21.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.22.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.26.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.27.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.28.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.29.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.30.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.192.0/18 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.193.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.194.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.195.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.196.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.197.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.200.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.201.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.203.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.204.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.206.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.207.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.209.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.210.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.212.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.215.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.216.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.217.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.218.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.220.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.221.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.222.0/24 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=157.240.223.0/24 comment="	facebook"
+/ip firewall address-list add list=sosmed address=173.252.64.0/19 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=173.252.88.0/21 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=173.252.96.0/19 comment="	Facebook, Inc."
+/ip firewall address-list add list=sosmed address=179.60.192.0/22 comment="	Edge Network Services Ltd"
+/ip firewall address-list add list=sosmed address=179.60.192.0/24 comment="	Edge Network Services Ltd"
+/ip firewall address-list add list=sosmed address=179.60.193.0/24 comment="	Edge Network Services Ltd"
+/ip firewall address-list add list=sosmed address=179.60.194.0/24 comment="	Edge Network Services Ltd"
+/ip firewall address-list add list=sosmed address=179.60.195.0/24 comment="	Edge Network Services Ltd"
+/ip firewall address-list add list=sosmed address=185.60.216.0/22 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=185.60.216.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=185.60.217.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=185.60.218.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=185.60.219.0/24 comment="	Facebook Ireland Ltd"
+/ip firewall address-list add list=sosmed address=185.89.218.0/23 comment="	Onavo Mobile LTD"
+/ip firewall address-list add list=sosmed address=185.89.218.0/24 comment="	Onavo Mobile LTD"
+/ip firewall address-list add list=sosmed address=185.89.219.0/24 comment="	Onavo Mobile LTD"
+/ip firewall address-list add list=sosmed address=204.15.20.0/22 comment="	Facebook, Inc."
+
+/ip firewall address-list add address=64.63.0.0/18 comment="MoPub, Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.160.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.162.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.163.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.164.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.165.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.166.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.168.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.169.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.171.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.172.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.173.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.175.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.176.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.177.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.178.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.179.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.180.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.181.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.182.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.184.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.185.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.186.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.187.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.188.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.189.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.190.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=69.195.191.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=103.252.112.0/23 comment="60 Robinson Road, #11-02 BEA Building, Singapore 068892. Singapore" list=sosmed
+/ip firewall address-list add address=103.252.114.0/23 comment="60 Robinson Road, #11-02 BEA Building, Singapore 068892. Singapore" list=sosmed
+/ip firewall address-list add address=104.244.40.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=104.244.41.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=104.244.42.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=104.244.43.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=104.244.44.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=104.244.45.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=104.244.46.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=104.244.47.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=185.45.5.0/24 comment="Twitter International Company Ireland" list=sosmed
+/ip firewall address-list add address=185.45.6.0/23 comment="Twitter International Company Ireland" list=sosmed
+/ip firewall address-list add address=188.64.224.0/24 comment="Heron SAS France" list=sosmed
+/ip firewall address-list add address=188.64.225.0/24 comment="Heron SAS France" list=sosmed
+/ip firewall address-list add address=188.64.226.0/23 comment="Heron SAS France" list=sosmed
+/ip firewall address-list add address=188.64.226.0/24 comment="Heron SAS France" list=sosmed
+/ip firewall address-list add address=188.64.227.0/24 comment="Heron SAS France" list=sosmed
+/ip firewall address-list add address=188.64.228.0/24 comment="Heron SAS France" list=sosmed
+/ip firewall address-list add address=188.64.229.0/24 comment="Heron SAS France" list=sosmed
+/ip firewall address-list add address=192.44.69.0/24 comment="Crashlytics, Inc United States" list=sosmed
+/ip firewall address-list add address=192.133.76.0/22 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=192.133.76.0/23 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.16.156.0/22 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.16.156.0/23 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.59.148.0/22 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.96.56.0/23 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.96.56.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.96.57.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.96.58.0/23 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.96.60.0/23 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.96.60.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.96.61.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=199.96.62.0/23 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=202.160.128.0/24 comment="Twitter Asia Pacific Pte. Ltd. Singapore" list=sosmed
+/ip firewall address-list add address=202.160.129.0/24 comment="Twitter Asia Pacific Pte. Ltd. Singapore" list=sosmed
+/ip firewall address-list add address=202.160.130.0/24 comment="Twitter Asia Pacific Pte. Ltd. Singapore" list=sosmed
+/ip firewall address-list add address=202.160.131.0/24 comment="Twitter Asia Pacific Pte. Ltd. Singapore" list=sosmed
+/ip firewall address-list add address=209.237.192.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.193.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.194.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.195.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.196.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.197.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.198.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.199.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.200.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.201.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.204.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.205.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.206.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.207.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.208.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.209.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.210.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.211.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.212.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.213.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.214.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.215.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.216.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.217.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.218.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.219.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.220.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.221.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.222.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=209.237.223.0/24 comment="Twitter Inc. United States" list=sosmed
+/ip firewall address-list add address=149.154.164.0/22 comment="Telegram" list=sosmed
+/ip firewall address-list add address=149.154.160.0/22 comment="Telegram" list=sosmed
+/ip firewall address-list add address=95.161.64.0/20 comment="Telegram" list=sosmed
+/ip firewall address-list add address=91.108.56.0/22 comment="Telegram" list=sosmed
+/ip firewall address-list add address=91.108.8.0/22 comment="Telegram" list=sosmed
+/ip firewall address-list add address=91.108.4.0/22 comment="Telegram" list=sosmed
