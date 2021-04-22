@@ -1,0 +1,24 @@
+#On Login
+:local usernya "$user"
+:local bot "1638714207:AAGHNHb00zWENOrw6Y4Ip93GSSfQjgkoTNc"
+:local chat "-423567746"
+:local useraktif [/ppp active print count-only]
+:local date [/system clock get date]
+:local jam [/system clock get time]
+/interface pppoe-server remove [find name ~"^<pppoe-"]
+:if ([/interface pppoe-server find name=$usernya]="") do={
+/interface pppoe-server add name=$usernya user=$usernya service=pppoe-service
+/interface list member add interface=$usernya list=LOKAL
+}
+/tool fetch url="https://api.telegram.org/bot$bot/sendMessage?chat_id=$chat&text=LOGIN%0AUser: $usernya%0AIP: $"remote-address"%0ATanggal: $date%0AJam: $jam%0Atotal user aktif: $useraktif" keep-result=no
+
+==========================================================================================================
+
+#On Logout
+:local bot "1638714207:AAGHNHb00zWENOrw6Y4Ip93GSSfQjgkoTNc"
+:local chat "-423567746"
+:local useraktif [/ppp active print count-only]
+:local date [/system clock get date]
+:local jam [/system clock get time]
+delay 1
+/tool fetch url="https://api.telegram.org/bot$bot/sendmessage?chat_id=$chat&text= $user LOGOUT Tanggal: $date Jam: $jam Total: $useraktif" keep-result=no
