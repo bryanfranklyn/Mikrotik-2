@@ -1,14 +1,14 @@
 /ip route
-add comment=to-inject distance=1 gateway=1.2.3.4 routing-mark=inject
-add comment=ping-inject distance=1 gateway=1.2.3.4 routing-mark=ping-inject
-add comment=inject distance=11 gateway=1.2.3.4
-add comment=login-inject distance=1 dst-address=10.233.16.0/24 gateway=1.2.3.4
+add comment=to-inject distance=1 gateway=10.148.0.1 routing-mark=inject
+add comment=ping-inject distance=1 gateway=10.148.0.1 routing-mark=ping-inject
+add comment=inject distance=11 gateway=10.148.0.1
+add comment=login-inject distance=1 dst-address=10.233.16.0/24 gateway=10.148.0.1
 /tool netwatch
-add comment=cek-inject host=1.2.3.4 interval=1s
+add comment=cek-inject host=10.148.0.1 interval=1s
 
 
 
-:local interfacenya "ether1"
+:local interfacenya "ether2"
 :local gatewaynya [/ip dhcp-client get value-name=gateway [find interface=$interfacenya]];
 /ip route set gateway=$gatewaynya [find comment=login-inject]
 /ip route set gateway=$gatewaynya [find comment=inject]
@@ -24,7 +24,19 @@ add comment=cek-inject host=1.2.3.4 interval=1s
 :if ([/ping address=$gatewaynya routing-table=ping-inject interface=$interfacenya count=5] = 0) do={
 :log error ("inject DOWN")
 :log error ("trying to reLOGIN")
-/tool fetch  http-header-field="User-Agent: Mozilla/5.0, Referer: https://welcome2.wifi.id/wms/?gw_id=WAG-D4-GBL&client_mac=" http-method=post http-data="username=humam@trk@com.smartbisnis&password=humam" url=("https://welcome2.wifi.id/authnew/login/check_login.php\?ipc=&gw_id=WAG-D4-GBL&client_mac=&wlan=") keep-result=no;
+/tool fetch  http-header-field="User-Agent: Mozilla/5.0, Referer: https://welcome2.wifi.id/wms/?gw_id=WAG-D4-GBL&client_mac=" http-method=post http-data="username=innput3@gmail.com@com.smartbisnis&password=Down4life" url=("https://welcome2.wifi.id/authnew/login/check_login.php\?ipc=&gw_id=WAG-D4-GBL&client_mac=&wlan=") keep-result=no;
+}
+delay 2
+:if ([/ping address=$gatewaynya routing-table=ping-inject interface=$interfacenya count=5] = 0) do={
+:log error ("inject DOWN")
+:log error ("trying to reLOGIN")
+/tool fetch  http-header-field="User-Agent: Mozilla/5.0, Referer: https://welcome2.wifi.id/wms/?gw_id=WAG-D4-GBL&client_mac=" http-method=post http-data="username=agung@klinik@com.smartbisnis&password=@gviel" url=("https://welcome2.wifi.id/authnew/login/check_login.php\?ipc=&gw_id=WAG-D4-GBL&client_mac=&wlan=") keep-result=no;
+}
+:delay 2
+:if ([/ping address=$gatewaynya interface=$interfacenya routing-table=ping-inject count=5] = 0) do={
+:log error ("inject DOWN")
+:log error ("trying to reLOGIN")
+/tool fetch  http-header-field="User-Agent: Mozilla/5.0, Referer: https://welcome2.wifi.id/wms/?gw_id=WAG-D4-GBL&client_mac=" http-method=post http-data="username=5f8c410@violet&password=7J7" url=("https://welcome2.wifi.id/authnew/login/check_login.php\?ipc=&gw_id=WAG-D4-GBL&client_mac=&wlan=") keep-result=no;
 }
 :if ([/ping address=$gatewaynya routing-table=ping-inject interface=$interfacenya count=5] = 0) do={
 /ip dhcp-client release [find interface=$interfacenya]
