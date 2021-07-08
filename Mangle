@@ -1,0 +1,27 @@
+/ip firewall mangle
+add action=mark-routing chain=prerouting comment=speedtest dst-address-list=\
+    speedtest in-interface-list=LOKAL new-routing-mark=KS01 passthrough=no \
+    src-address-list=private-lokal
+    
+/ip firewall mangle
+add action=jump chain=forward comment="all trafik" in-interface-list=WAN \
+    jump-target=trafik
+add action=jump chain=forward jump-target=trafik out-interface-list=WAN
+add action=accept chain=trafik protocol=icmp
+add action=accept chain=trafik protocol=tcp src-port=53,5353,123
+add action=accept chain=trafik dst-port=53,5353,123 protocol=tcp
+add action=accept chain=trafik protocol=udp src-port=53,5353,123
+add action=accept chain=trafik dst-port=53,5353,123 protocol=udp
+add action=accept chain=trafik comment=speedtest src-address-list=\
+    host-speedtest
+add action=accept chain=trafik dst-address-list=host-speedtest
+add action=mark-packet chain=trafik new-packet-mark=trafik passthrough=no \
+    protocol=tcp src-port=0-2000,8000-8999,4500
+add action=mark-packet chain=trafik dst-port=0-2000,8000-8999,4500 \
+    new-packet-mark=trafik passthrough=no protocol=tcp
+add action=mark-packet chain=trafik new-packet-mark=trafik passthrough=no \
+    protocol=udp src-port=0-2000,8000-8999,4500
+add action=mark-packet chain=trafik dst-port=0-2000,8000-8999,4500 \
+    new-packet-mark=trafik passthrough=no protocol=udp
+add action=accept chain=trafik
+add action=return chain=trafik
