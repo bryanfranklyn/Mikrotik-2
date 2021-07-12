@@ -12,15 +12,14 @@ add action=accept chain=postrouting dst-address-list=private-lokal \
     src-address-list=private-lokal
 add action=accept chain=output dst-address-list=private-lokal \
     src-address-list=private-lokal
-add action=accept chain=prerouting comment=host-speedtest src-address-list=\
-    host-speedtest
-add action=accept chain=prerouting comment=host-speedtest dst-address-list=\
-    host-speedtest
 add action=jump chain=input in-interface-list=WAN jump-target=download
 add action=jump chain=forward in-interface-list=WAN jump-target=download
 add action=accept chain=download comment=icmp-down protocol=icmp
 add action=accept chain=download protocol=tcp src-port=53,5353,123
 add action=accept chain=download protocol=udp src-port=53,5353,123
+add action=mark-packet chain=download comment=host-speedtest-down \
+    dst-address-list=private-lokal new-packet-mark=host-speedtest-down \
+    passthrough=no src-address-list=host-speedtest
 add action=mark-packet chain=download comment=browsing-down connection-rate=\
     0-512k new-packet-mark=browsing-down passthrough=no protocol=tcp \
     src-port=80,443
@@ -37,6 +36,9 @@ add action=jump chain=output jump-target=upload out-interface-list=WAN
 add action=accept chain=upload comment=icmp-up protocol=icmp
 add action=accept chain=upload dst-port=53,5353,123 protocol=tcp
 add action=accept chain=upload dst-port=53,5353,123 protocol=udp
+add action=mark-packet chain=upload comment=host-speedtest-up \
+    dst-address-list=host-speedtest new-packet-mark=host-speedtest-up \
+    passthrough=no src-address-list=private-lokal
 add action=mark-packet chain=upload comment=browsing-up connection-rate=\
     0-500k dst-port=80,443 new-packet-mark=browsing-up passthrough=no \
     protocol=tcp
