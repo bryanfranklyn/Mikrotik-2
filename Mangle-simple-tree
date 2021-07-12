@@ -1,0 +1,121 @@
+/ip firewall mangle
+add action=mark-routing chain=prerouting comment=speedtest dst-address-list=\
+    speedtest in-interface-list=LOKAL new-routing-mark=KS01 passthrough=no \
+    src-address-list=private-lokal
+add action=accept chain=input comment=TREE dst-address-list=private-lokal \
+    src-address-list=private-lokal
+add action=accept chain=prerouting dst-address-list=private-lokal \
+    src-address-list=private-lokal
+add action=accept chain=forward dst-address-list=private-lokal \
+    src-address-list=private-lokal
+add action=accept chain=postrouting dst-address-list=private-lokal \
+    src-address-list=private-lokal
+add action=accept chain=output dst-address-list=private-lokal \
+    src-address-list=private-lokal
+add action=accept chain=prerouting comment=host-speedtest src-address-list=\
+    host-speedtest
+add action=accept chain=prerouting comment=host-speedtest dst-address-list=\
+    host-speedtest
+add action=jump chain=input in-interface-list=WAN jump-target=download
+add action=jump chain=forward in-interface-list=WAN jump-target=download
+add action=accept chain=download comment=icmp-down protocol=icmp
+add action=accept chain=download protocol=tcp src-port=53,5353,123
+add action=accept chain=download protocol=udp src-port=53,5353,123
+add action=mark-packet chain=download comment=browsing-down connection-rate=\
+    0-512k new-packet-mark=browsing-down passthrough=no protocol=tcp \
+    src-port=80,443
+add action=mark-packet chain=download connection-rate=0-512k new-packet-mark=\
+    browsing-down passthrough=no protocol=udp src-port=80,443
+add action=mark-packet chain=download comment=trafik-down new-packet-mark=\
+    trafik-down passthrough=no protocol=tcp src-port=0-2000,8000-8999,4500
+add action=mark-packet chain=download new-packet-mark=trafik-down \
+    passthrough=no protocol=udp src-port=0-2000,8000-8999,4500
+add action=accept chain=download comment=high-priority-down
+add action=return chain=download
+add action=jump chain=forward jump-target=upload out-interface-list=WAN
+add action=jump chain=output jump-target=upload out-interface-list=WAN
+add action=accept chain=upload comment=icmp-up protocol=icmp
+add action=accept chain=upload dst-port=53,5353,123 protocol=tcp
+add action=accept chain=upload dst-port=53,5353,123 protocol=udp
+add action=mark-packet chain=upload comment=browsing-up connection-rate=\
+    0-500k dst-port=80,443 new-packet-mark=browsing-up passthrough=no \
+    protocol=tcp
+add action=mark-packet chain=upload connection-rate=0-500k dst-port=80,443 \
+    new-packet-mark=browsing-up passthrough=no protocol=udp
+add action=mark-packet chain=upload comment=trafik-up dst-port=\
+    0-2000,8000-8999,4500 new-packet-mark=trafik-up passthrough=no protocol=\
+    tcp
+add action=mark-packet chain=upload dst-port=0-2000,8000-8999,4500 \
+    new-packet-mark=trafik-up passthrough=no protocol=udp
+add action=accept chain=upload comment=high-priority-up
+add action=return chain=upload
+
+#QUEUE-SIMPLE#
+/queue simple
+add max-limit=1G/1G name=<--QOS--> queue=default/default target="172.16.0.0/20\
+    ,100.90.1.0/24,100.64.121.0/24,100.72.125.0/24,100.72.111.0/24,197.15.100.\
+    0/24,197.127.120.0/24,197.16.101.0/24,172.32.2.0/24,100.99.125.0/24"
+add limit-at=1G/1G max-limit=1G/1G name=01.ALL-CLIENT parent=<--QOS--> \
+    priority=7/7 queue=default/default target="172.16.0.0/20,100.90.1.0/24,100\
+    .64.121.0/24,100.72.125.0/24,100.72.111.0/24,197.15.100.0/24,197.127.120.0\
+    /24,197.16.101.0/24,172.32.2.0/24,100.99.125.0/24"
+add disabled=yes limit-at=64k/64k max-limit=10M/10M name=01.ICMP-DNS \
+    packet-marks=icmp-dns-down,icmp-dns-up parent=01.ALL-CLIENT priority=1/1 \
+    queue=default/default target="172.16.0.0/20,100.90.1.0/24,100.64.121.0/24,\
+    100.72.125.0/24,100.72.111.0/24,197.15.100.0/24,197.127.120.0/24,197.16.10\
+    1.0/24,172.32.2.0/24"
+add disabled=yes limit-at=10M/10M max-limit=20M/20M name=02.HIGH-PRIORITY \
+    packet-marks=high-priority-down,high-priority-up parent=01.ALL-CLIENT \
+    priority=3/3 queue=default/default target="172.16.0.0/20,100.90.1.0/24,100\
+    .64.121.0/24,100.72.125.0/24,100.72.111.0/24,197.15.100.0/24,197.127.120.0\
+    /24,197.16.101.0/24,172.32.2.0/24"
+add limit-at=50M/50M max-limit=100M/100M name=A.BACKUP packet-marks=\
+    browsing-down,trafik-down,browsing-up,trafik-up parent=01.ALL-CLIENT \
+    priority=7/7 queue=default/default target=\
+    197.15.100.0/24,197.127.120.0/24,197.16.101.0/24,172.32.2.0/24
+add limit-at=50M/100M max-limit=100M/100M name=E.USEETV packet-marks=\
+    trafik,browsing-down,trafik-down,browsing-up,trafik-up parent=\
+    01.ALL-CLIENT queue=default/default target=100.90.1.0/24
+add limit-at=100M/100M max-limit=100M/100M name=E.HOTSPOT packet-marks=\
+    browsing-down,trafik-down,browsing-up,trafik-up parent=01.ALL-CLIENT \
+    queue=default/default target=172.16.0.0/20
+add limit-at=100M/100M max-limit=200M/200M name=B.PPPoE-TARUKAN packet-marks=\
+    browsing-down,trafik-down,browsing-up,trafik-up parent=01.ALL-CLIENT \
+    priority=7/7 queue=default/default target=100.64.121.0/24,100.99.125.0/24
+add limit-at=500M/500M max-limit=500M/500M name=C.PPPoE-MENDONGAN \
+    packet-marks=browsing-down,trafik-down,browsing-up,trafik-up parent=\
+    01.ALL-CLIENT priority=7/7 queue=default/default target=100.72.125.0/24
+add limit-at=500M/500M max-limit=500M/500M name=D.PPPoE-KENTENG packet-marks=\
+    browsing-down,trafik-down,browsing-up,trafik-up parent=01.ALL-CLIENT \
+    priority=7/7 queue=default/default target=100.72.111.0/24
+add limit-at=1M/5M max-limit=15M/15M name=02.TRIO parent=A.BACKUP queue=\
+    default/default target=197.127.120.0/24
+add limit-at=10M/10M max-limit=10M/10M name=03.DUREN parent=A.BACKUP queue=\
+    default/default target=197.16.101.0/24
+add limit-at=1M/5M max-limit=10M/10M name=01.ANAM parent=A.BACKUP queue=\
+    default/default target=197.15.100.0/24
+    
+#QUEUE-TREE#
+/queue tree
+add max-limit=180M name=A.DOWNLOAD parent=global queue=default
+add max-limit=100M name=B.UPLOAD parent=global queue=default
+add limit-at=64k max-limit=100M name=A.1.ICMP-DNS packet-mark=icmp-dns-down \
+    parent=A.DOWNLOAD priority=1 queue=default
+add limit-at=5M max-limit=100M name=A.2.HIGH-PRIORITY packet-mark=\
+    high-priority-down parent=A.DOWNLOAD priority=3 queue=default
+add limit-at=64k max-limit=200M name=B.1.ICMP-DNS packet-mark=icmp-dns-up \
+    parent=B.UPLOAD priority=1 queue=default
+add limit-at=10M max-limit=200M name=B.2.HIGH-PRIORITY packet-mark=\
+    high-priority-up parent=B.UPLOAD priority=3 queue=default
+add limit-at=80M max-limit=1G name=A.3.TRAFIK parent=A.DOWNLOAD queue=\
+    pcq-download-default
+add limit-at=80M max-limit=1G name=B.3.TRAFIK parent=B.UPLOAD queue=\
+    pcq-upload-default
+add limit-at=5M max-limit=120M name=A.3.1.BROWSING packet-mark=browsing-down \
+    parent=A.3.TRAFIK priority=5 queue=default
+add limit-at=5M max-limit=50M name=B.3.1.BROWSING packet-mark=browsing-up \
+    parent=B.3.TRAFIK priority=5 queue=default
+add limit-at=5M max-limit=120M name=A.3.5.UNKNOWN packet-mark=trafik-down \
+    parent=A.3.TRAFIK queue=default
+add limit-at=5M max-limit=50M name=B.3.5.UNKNOWN packet-mark=trafik-up \
+    parent=B.3.TRAFIK queue=default
