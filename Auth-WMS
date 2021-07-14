@@ -1,0 +1,36 @@
+:local username "arin.Hg7@wms.1253412331.000"
+:local password "arin"
+:local gwid "WAG2-D4-GBL"
+:local wlan "ABRABR00142-N/TLK-CI-85124:ARIN@wifi.id"
+:local int "wlan1"
+:local gw "8.8.8.8"
+:local ipwan [/ip address get [/ip address find interface=$int] address]
+:local ipwan [put [:pick $ipwan 0 [:find $ipwan "/"]]]
+:local murudul "3"
+:if ([/ping $gw interval=0.5 count=$murudul interface=$int] = 0) do={
+:log warning "$int {link down} coba konek lagi ..."
+/tool fetch http-method=post http-data="username=$username&password=$password" url=("https://welcome2.wifi.id/wms/auth/authnew/autologin/quarantine.php\?ipc=$ipwan&gw_id=$gwid&mac=$mac&username=$username&password=$password") keep-result=no http-header-field="Content-Type: application/x-www-form-urlencoded; charset=UTF-8,User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36,Referer: https://welcome2.wifi.id/login/?gw_id=$gwid&client_mac=$mac&wlan=$wlan&sessionid=0203FFFF7803E5D1-60B372A1&redirect=http://www.gstatic.com/generate_204" 
+:log warning "Login WMS1."
+} else {
+	/ ip dhcp-client renew [find interface =$int];
+}
+
+-------------------------------------------
+
+:local username "cimol696.Hh7@wms.1213877549.000"
+:local password "cimol696"
+:local gwid "WAG-D4-GBL"
+:local wlan "ABRABR00073-N/TLK-CI-61876:ABERCIO@wifi.id"
+:local int "wlan2"
+:local gw "8.8.8.8"
+:local ipwan [/ip address get [/ip address find interface=$int] address]
+:local ipwan [put [:pick $ipwan 0 [:find $ipwan "/"]]]
+:local murudul "3"
+:if ([/ping $gw interval=0.5 count=$murudul interface=$int] = 0) do={
+:log warning "$int {link down} coba konek lagi ..."
+/tool fetch http-method=post http-data="username=$username&password=$password" url=("https://welcome2.wifi.id/wms/auth/authnew/autologin/quarantine.php\?ipc=$ipwan&gw_id=$gwid&mac=$mac&username=$username&password=$password") keep-result=no http-header-field="Content-Type: application/x-www-form-urlencoded; charset=UTF-8,User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36,Referer: https://welcome2.wifi.id/login/?gw_id=$gwid&client_mac=$mac&wlan=$wlan&sessionid=0203FFFF7803E5D1-60B372A1&redirect=http://www.gstatic.com/generate_204" 
+:log warning "INJEKSI BERHASIL..."
+} else {
+	/ ip dhcp-client renew [find interface =$int];
+}
+
